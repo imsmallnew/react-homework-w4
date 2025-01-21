@@ -109,13 +109,22 @@ function ProductModal ({
                             原價
                             </label>
                             <input
-                            name="origin_price"
-                            id="origin_price"
-                            type="number"
-                            className="form-control"
-                            placeholder="請輸入原價"
-                            onChange={handleInputChange}
-                            value={tempProduct.origin_price}
+                                name="origin_price"
+                                id="origin_price"
+                                type="number"
+                                className="form-control"
+                                placeholder="請輸入原價"
+                                onChange={(e) => {
+                                    const value = Number(e.target.value);
+                                    if (value >= 0) {
+                                      handleInputChange(e); // 呼叫原始處理函式
+                                    } else {
+                                      alert("原價不能小於 0");
+                                      e.target.value = 0; // 可選：將輸入框值設為 0
+                                    }
+                                }}
+                                value={tempProduct.origin_price}
+                                min="0" // 加入限制
                             />
                         </div>
                         <div className="col-6">
@@ -123,13 +132,22 @@ function ProductModal ({
                             售價
                             </label>
                             <input
-                            name="price"
-                            id="price"
-                            type="number"
-                            className="form-control"
-                            placeholder="請輸入售價"
-                            onChange={handleInputChange}
-                            value={tempProduct.price}
+                                name="price"
+                                id="price"
+                                type="number"
+                                className="form-control"
+                                placeholder="請輸入售價"
+                                onChange={(e) => {
+                                    const value = Number(e.target.value);
+                                    if (value >= 0) {
+                                      handleInputChange(e); // 呼叫原始處理函式
+                                    } else {
+                                      alert("售價不能小於 0");
+                                      e.target.value = 0; // 可選：將輸入框值設為 0
+                                    }
+                                }}
+                                value={tempProduct.price}
+                                min="0" // 加入限制
                             />
                         </div>
                         </div>
