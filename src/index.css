@@ -1,0 +1,69 @@
+.mainWrap {
+  width: 100%;
+  height: 0px;
+  padding-bottom: 100%;
+  position: relative;
+}
+.mainWrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} 
+.subWrap {
+  width: 100%;
+}
+.imgFrame {
+  width: 100%;
+  height: 0px;
+  padding-bottom: 100%;
+  position: relative;
+}
+.imgFrame img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+input[type="checkbox"] {
+      margin-top: 15px;
+      transform: scale(2);
+}
+.modalImgWrap {
+  position: relative;
+}
+.modalImgWrap label {
+  position: absolute;
+}  
+.modalImgWrap img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+.loading{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  z-index: 9990;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+} 
+.toast{
+  position: fixed;
+  top: 5px;
+  z-index: 9999;
+} 
+
+@media screen and (max-width: 600px) {
+  .modalImgWrap img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  } 
+}
